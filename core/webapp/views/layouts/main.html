@@ -1,0 +1,52 @@
+{{ this.beginPage() }}
+
+{% set defaultTitle = "multiapp" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ pageTitle | default(defaultTitle) }}</title>
+</head>
+
+{% block head %}
+
+    {{ this.head() }}
+
+{% endblock %}
+
+<body>
+{{ this.beginBody() }}
+
+{# --- BODY --- #}
+{% block body %}
+
+    {# --- HEADER --- #}
+    <header>
+    {% block header %}
+        <h1>{{ pageTitle | default(defaultTitle) }}</h1>
+    {% endblock %}
+    </header>
+    {# --- HEADER --- #}
+
+    {# --- MAIN --- #}
+    <div id="main">
+    {% block main %}
+    {% endblock %}
+    </div>
+    {# --- MAIN --- #}
+
+    {# --- FOOTER --- #}
+    <footer>
+    {% block footer %}
+    {% endblock  %}
+    </footer>
+    {# --- FOOTER --- #}
+
+{% endblock %}
+{# --- BODY --- #}
+
+{{ this.endBody() }}
+</body>
+</html>
+{{ this.endPage() }}

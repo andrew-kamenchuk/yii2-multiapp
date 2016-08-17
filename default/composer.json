@@ -1,0 +1,23 @@
+{
+    "autoload": {
+        "files": [
+            "./vendor/yiisoft/yii2/Yii.php"
+        ]
+    },
+
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        },
+
+        "merge-plugin": {
+            "include" : [
+                "../core/composer.json"
+            ],
+
+            "merge-extra": true,
+            "merge-extra-deep": true
+        }
+    }
+}
