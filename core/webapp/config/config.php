@@ -5,11 +5,15 @@ return function (array $config, array $params) {
 
     $config["controllerNamespace"] = "core\\webapp\\controllers";
 
+    $config["defaultRoute"] = "default/index";
+
     $config["components"]["request"] = [
         "enableCookieValidation" => $params["cookie.validation.enabled"],
         "cookieValidationKey"    => $params["cookie.validation.key"],
         "enableCsrfValidation"   => $params["csrf.validation.enabled"],
     ];
+
+    $config["layout"] = false;
 
     $config["components"]["view"] = [
         "renderers"        => [
@@ -57,8 +61,7 @@ return function (array $config, array $params) {
         'enableStrictParsing' => true,
 
         "rules" => [
-            "/"                     => "default/index",
-            "<controller>/<action>" => "<controller>/<action>"
+            "/" => $config["defaultRoute"],
         ],
     ];
 

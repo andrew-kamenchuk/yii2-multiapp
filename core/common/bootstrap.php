@@ -12,5 +12,3 @@ error_reporting(E_ALL ^ E_USER_DEPRECATED);
 ini_set("display_errors", YII_DEBUG);
 
 define("CORE_PATH", dirname(__DIR__));
-
-Yii::setAlias("core", CORE_PATH);

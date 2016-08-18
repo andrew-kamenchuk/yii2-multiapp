@@ -6,6 +6,10 @@ return function (array $config, array $params) {
 
     $config["name"]       = APP_NAME;
 
+    $config["aliases"]    = [
+        "core"  => CORE_PATH,
+    ];
+
     $config["params"]     = $params;
 
     $config["basePath"]   = APP_PATH;
