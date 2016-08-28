@@ -2,9 +2,6 @@
 vendor/
 composer.lock
 
-# ctags
-.tags
-
 # yii runtime/assets
 */runtime/*
 **/web/assets/*
